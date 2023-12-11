@@ -37,24 +37,27 @@
             rendeleBindingSource = new BindingSource(components);
             gameBindingSource = new BindingSource(components);
             textBoxjatek = new TextBox();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)rendeleBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gameBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(23, 21);
+            label1.Location = new Point(20, 16);
             label1.Name = "label1";
-            label1.Size = new Size(45, 20);
+            label1.Size = new Size(36, 15);
             label1.TabIndex = 0;
             label1.Text = "Játék:";
             // 
             // buttonOk
             // 
-            buttonOk.Location = new Point(332, 193);
+            buttonOk.Location = new Point(290, 145);
+            buttonOk.Margin = new Padding(3, 2, 3, 2);
             buttonOk.Name = "buttonOk";
-            buttonOk.Size = new Size(94, 29);
+            buttonOk.Size = new Size(82, 22);
             buttonOk.TabIndex = 1;
             buttonOk.Text = "&Ok";
             buttonOk.UseVisualStyleBackColor = true;
@@ -62,9 +65,10 @@
             // 
             // buttonMégse
             // 
-            buttonMégse.Location = new Point(232, 193);
+            buttonMégse.Location = new Point(203, 145);
+            buttonMégse.Margin = new Padding(3, 2, 3, 2);
             buttonMégse.Name = "buttonMégse";
-            buttonMégse.Size = new Size(94, 29);
+            buttonMégse.Size = new Size(82, 22);
             buttonMégse.TabIndex = 2;
             buttonMégse.Text = "&Mégse";
             buttonMégse.UseVisualStyleBackColor = true;
@@ -72,17 +76,20 @@
             // 
             // textBoxDb
             // 
-            textBoxDb.Location = new Point(23, 111);
+            textBoxDb.Location = new Point(20, 83);
+            textBoxDb.Margin = new Padding(3, 2, 3, 2);
             textBoxDb.Name = "textBoxDb";
-            textBoxDb.Size = new Size(243, 27);
+            textBoxDb.Size = new Size(213, 23);
             textBoxDb.TabIndex = 5;
+            textBoxDb.Validating += textBoxDb_Validating;
+            textBoxDb.Validated += textBoxDb_Validated;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 88);
+            label2.Location = new Point(20, 66);
             label2.Name = "label2";
-            label2.Size = new Size(115, 20);
+            label2.Size = new Size(93, 15);
             label2.TabIndex = 4;
             label2.Text = "Mennyiség (db):";
             // 
@@ -96,27 +103,36 @@
             // 
             // textBoxjatek
             // 
-            textBoxjatek.Location = new Point(23, 44);
+            textBoxjatek.Location = new Point(20, 33);
+            textBoxjatek.Margin = new Padding(3, 2, 3, 2);
             textBoxjatek.Name = "textBoxjatek";
-            textBoxjatek.Size = new Size(243, 27);
+            textBoxjatek.Size = new Size(213, 23);
             textBoxjatek.TabIndex = 6;
+            textBoxjatek.Validating += textBoxjatek_Validating;
+            textBoxjatek.Validated += textBoxjatek_Validated;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // UjRendelesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(438, 234);
+            ClientSize = new Size(383, 176);
             Controls.Add(textBoxjatek);
             Controls.Add(textBoxDb);
             Controls.Add(label2);
             Controls.Add(buttonMégse);
             Controls.Add(buttonOk);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UjRendelesForm";
             Text = "UjRendelesForm";
             Load += UjRendelesForm_Load;
             ((System.ComponentModel.ISupportInitialize)rendeleBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)gameBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -131,5 +147,6 @@
         private BindingSource gameBindingSource;
         private BindingSource rendeleBindingSource;
         public TextBox textBoxjatek;
+        private ErrorProvider errorProvider1;
     }
 }

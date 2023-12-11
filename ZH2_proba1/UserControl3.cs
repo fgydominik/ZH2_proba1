@@ -86,27 +86,31 @@ namespace ZH2_proba1
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            var kiválasztottRendeles = (Rendele)listBoxRendelesID.SelectedItem;
+            if (MessageBox.Show("törlés?", "törlés", MessageBoxButtons.YesNo) != DialogResult.No)
+            { 
+                var kiválasztottRendeles = (Rendele)listBoxRendelesID.SelectedItem;
+                //var kiválasztottRendeles2 = (Rendele)dataGridView1.CurrentRow.DataBoundItem;
 
-            var torlendo = (from x in boardGameContext.Rendeles
-                           where x.RendelesId == kiválasztottRendeles.RendelesId
-                           select x).FirstOrDefault();
+                var torlendo = (from x in boardGameContext.Rendeles
+                               where x.RendelesId == kiválasztottRendeles.RendelesId
+                               select x).FirstOrDefault();
 
-            boardGameContext.Rendeles.Remove(torlendo);
+                boardGameContext.Rendeles.Remove(torlendo);
 
-            try
-            {
-                boardGameContext.SaveChanges();
+                try
+                {
+                    boardGameContext.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+                Rendeleslistazas();
+                RendelesSum();
+                RendelesIdListazas();
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
-            Rendeleslistazas();
-            RendelesSum();
-            RendelesIdListazas();
         }
     }
 }
