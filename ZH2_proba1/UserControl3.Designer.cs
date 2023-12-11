@@ -40,7 +40,7 @@
             buttonRemove = new Button();
             textBoxOsszeg = new TextBox();
             label1 = new Label();
-            listBox1 = new ListBox();
+            listBoxRendelesID = new ListBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gameBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rendeleBindingSource).BeginInit();
@@ -117,12 +117,13 @@
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(810, 164);
+            buttonRemove.Location = new Point(34, 416);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(165, 132);
+            buttonRemove.Size = new Size(150, 49);
             buttonRemove.TabIndex = 2;
             buttonRemove.Text = "-";
             buttonRemove.UseVisualStyleBackColor = true;
+            buttonRemove.Click += buttonRemove_Click;
             // 
             // textBoxOsszeg
             // 
@@ -140,21 +141,21 @@
             label1.TabIndex = 4;
             label1.Text = "Rendelések Összege:";
             // 
-            // listBox1
+            // listBoxRendelesID
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(34, 26);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 444);
-            listBox1.TabIndex = 5;
+            listBoxRendelesID.FormattingEnabled = true;
+            listBoxRendelesID.ItemHeight = 20;
+            listBoxRendelesID.Location = new Point(34, 26);
+            listBoxRendelesID.Name = "listBoxRendelesID";
+            listBoxRendelesID.Size = new Size(150, 384);
+            listBoxRendelesID.TabIndex = 5;
             // 
             // UserControl3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
-            Controls.Add(listBox1);
+            Controls.Add(listBoxRendelesID);
             Controls.Add(label1);
             Controls.Add(textBoxOsszeg);
             Controls.Add(buttonRemove);
@@ -183,6 +184,6 @@
         private BindingSource gameBindingSource;
         private DataGridViewTextBoxColumn mennyisegDbDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fizetendoFtDataGridViewTextBoxColumn;
-        private ListBox listBox1;
+        public ListBox listBoxRendelesID;
     }
 }

@@ -29,7 +29,7 @@ namespace ZH2_proba1
 
         private void UjRendelesForm_Load(object sender, EventArgs e)
         {
-
+            //comboBoxJatek.DisplayMember = "Nev";
         }
     }
 }

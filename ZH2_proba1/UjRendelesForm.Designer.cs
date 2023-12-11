@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             buttonOk = new Button();
             buttonMégse = new Button();
-            textBoxjatek = new TextBox();
             textBoxDb = new TextBox();
             label2 = new Label();
+            rendeleBindingSource = new BindingSource(components);
+            gameBindingSource = new BindingSource(components);
+            textBoxjatek = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)rendeleBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gameBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -65,13 +70,6 @@
             buttonMégse.UseVisualStyleBackColor = true;
             buttonMégse.Click += buttonMégse_Click;
             // 
-            // textBoxjatek
-            // 
-            textBoxjatek.Location = new Point(23, 44);
-            textBoxjatek.Name = "textBoxjatek";
-            textBoxjatek.Size = new Size(243, 27);
-            textBoxjatek.TabIndex = 3;
-            // 
             // textBoxDb
             // 
             textBoxDb.Location = new Point(23, 111);
@@ -88,20 +86,37 @@
             label2.TabIndex = 4;
             label2.Text = "Mennyiség (db):";
             // 
+            // rendeleBindingSource
+            // 
+            rendeleBindingSource.DataSource = typeof(Models.Rendele);
+            // 
+            // gameBindingSource
+            // 
+            gameBindingSource.DataSource = typeof(Models.Game);
+            // 
+            // textBoxjatek
+            // 
+            textBoxjatek.Location = new Point(23, 44);
+            textBoxjatek.Name = "textBoxjatek";
+            textBoxjatek.Size = new Size(243, 27);
+            textBoxjatek.TabIndex = 6;
+            // 
             // UjRendelesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(438, 234);
+            Controls.Add(textBoxjatek);
             Controls.Add(textBoxDb);
             Controls.Add(label2);
-            Controls.Add(textBoxjatek);
             Controls.Add(buttonMégse);
             Controls.Add(buttonOk);
             Controls.Add(label1);
             Name = "UjRendelesForm";
             Text = "UjRendelesForm";
             Load += UjRendelesForm_Load;
+            ((System.ComponentModel.ISupportInitialize)rendeleBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gameBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,7 +127,9 @@
         private Button buttonOk;
         private Button buttonMégse;
         private Label label2;
-        public TextBox textBoxjatek;
         public TextBox textBoxDb;
+        private BindingSource gameBindingSource;
+        private BindingSource rendeleBindingSource;
+        public TextBox textBoxjatek;
     }
 }
