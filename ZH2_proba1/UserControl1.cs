@@ -46,7 +46,7 @@ namespace ZH2_proba1
 
             var selectedGame = from x in boardGameContext.Games
                            where x.GameSk == game.GameSk
-                           select new
+                           select new JatekAdat
                            {
                                GameSk = x.GameSk,
                                Kategoria = x.KategoriaFkNavigation.KategoriaNev,

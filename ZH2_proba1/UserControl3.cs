@@ -39,10 +39,10 @@ namespace ZH2_proba1
                 rendeles.GameFk = Int32.Parse(ujRendelesForm.textBoxjatek.Text);
                 rendeles.MennyisegDb = Int32.Parse(ujRendelesForm.textBoxDb.Text);
 
-                
+
                 //rendeles.FizetendoFt = rendeles.MennyisegDb * rendeles.GameFkNavigation.ArFt;
-               
-               
+
+
                 //var fizetendo = from x in rendeles
                 //                where x.GameFk == rendeles.GameFkNavigation.GameSk
                 //                select x.GameFkNavigation.ArFt; 

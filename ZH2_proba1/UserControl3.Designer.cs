@@ -40,6 +40,7 @@
             buttonRemove = new Button();
             textBoxOsszeg = new TextBox();
             label1 = new Label();
+            listBox1 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gameBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rendeleBindingSource).BeginInit();
@@ -52,11 +53,11 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { rendelesIdDataGridViewTextBoxColumn, gameFkDataGridViewTextBoxColumn, mennyisegDbDataGridViewTextBoxColumn, fizetendoFtDataGridViewTextBoxColumn });
             dataGridView1.DataSource = rendeleBindingSource;
-            dataGridView1.Location = new Point(19, 26);
+            dataGridView1.Location = new Point(217, 26);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(765, 451);
+            dataGridView1.Size = new Size(567, 451);
             dataGridView1.TabIndex = 0;
             // 
             // rendelesIdDataGridViewTextBoxColumn
@@ -139,11 +140,21 @@
             label1.TabIndex = 4;
             label1.Text = "Rendelések Összege:";
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(34, 26);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(150, 444);
+            listBox1.TabIndex = 5;
+            // 
             // UserControl3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
+            Controls.Add(listBox1);
             Controls.Add(label1);
             Controls.Add(textBoxOsszeg);
             Controls.Add(buttonRemove);
@@ -172,5 +183,6 @@
         private BindingSource gameBindingSource;
         private DataGridViewTextBoxColumn mennyisegDbDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fizetendoFtDataGridViewTextBoxColumn;
+        private ListBox listBox1;
     }
 }

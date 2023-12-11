@@ -46,7 +46,7 @@ namespace ZH2_proba1
 
             var selectedKategoria = from x in boardGameContext.Games
                                     where x.KategoriaFk == kategorium.KategoriaSk
-                                    select new
+                                    select new KategoriaAdat
                                     {
                                         KategoriaSk = x.KategoriaFkNavigation.KategoriaSk,
                                         Nev = x.Nev

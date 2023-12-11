@@ -39,5 +39,14 @@ namespace ZH2_proba1
 
             userControl3.Dock = DockStyle.Fill;
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Biztosan be akarod zárni az alkalmazást?", "Alkalmazás bezárása",
+                MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

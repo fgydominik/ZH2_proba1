@@ -83,6 +83,7 @@
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             ResumeLayout(false);
         }
 
